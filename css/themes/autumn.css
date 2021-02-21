@@ -1,0 +1,52 @@
+body {
+    background: url("../../assets/autum.jpg") fixed;
+}
+
+main {
+    background: url("../../assets/autumn_pattern.png");
+    background-repeat: repeat;
+}
+
+#logo{
+    background-color: #751A33;
+    color: white;
+}
+
+#menu ul{
+    background-color: #B34233;
+}
+
+#menu ul li:hover { 
+    background-color: #751A33;
+}
+
+#menu ul li a {
+    color: white;
+}
+
+#news  h1{
+    color: #751A33;
+}
+
+#news article h2 {
+    color: #915c13;
+}
+
+#news article h3 {
+    color: #917724;
+}
+
+#daily-schedule h1 {
+    color: #751A33;
+}
+
+#daily-schedule .row {
+    color: #751A33;
+    font-weight: bolder;
+    border: 4px dashed #751A33;
+    background-color: #c2a136;
+}
+
+footer {
+    background-color: #751a3281;
+}

@@ -1,0 +1,47 @@
+body {
+    background: url("../../assets/summer.jpg") fixed;
+}
+
+main {
+    background: url("../../assets/summer_pattern.jpg");
+    background-repeat: repeat;
+}
+
+#logo{
+    background-color: #f3872f;
+}
+
+#menu ul{
+    background-color: 	#FFD700;
+}
+
+#menu ul li:hover { 
+    background-color: #f3872f;
+}
+
+#news  h1{
+    color: #f3872f;
+}
+
+#news article h2 {
+    color: #236e96;
+}
+
+#news article h3 {
+    color: #15b2d3;
+}
+
+#daily-schedule h1 {
+    color: #ff7809;
+}
+
+#daily-schedule .row {
+    color: #0068a0;
+    font-weight: bolder;
+    border: 4px dashed #ff7809;
+    background-color: #ffe23e;
+}
+
+footer {
+    background-color: #f3872f91;
+}

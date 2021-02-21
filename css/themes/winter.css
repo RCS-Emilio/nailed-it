@@ -1,0 +1,56 @@
+body {
+    background: url("../../assets/winter.jpg") fixed;
+}
+
+main {
+    background: url("../../assets/winter_pattern.jpg");
+    background-repeat: repeat;
+}
+
+#logo{
+    background-color: #405173;
+    color: white;
+}
+
+#menu ul{
+    background-color: #8a9cbf;
+}
+
+#menu ul li a {
+    color: black;
+}
+
+#menu ul li:hover { 
+    background-color: #405173;
+}
+
+#menu ul li a:hover {
+    color: white;
+}
+
+#news  h1{
+    color: #405173;
+}
+
+#news article h2 {
+    color: #402924;
+}
+
+#news article h3 {
+    color: #8c6c6c;
+}
+
+#daily-schedule h1 {
+    color: #405173;
+}
+
+#daily-schedule .row {
+    color: #402924;
+    font-weight: bolder;
+    border: 4px dashed #402924;
+    background-color: #8a9cbf;
+}
+
+footer {
+    background-color: #4051738a;
+}
