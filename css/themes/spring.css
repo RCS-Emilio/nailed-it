@@ -19,7 +19,7 @@ main {
     background-color: #5e8d5a;
 }
 
-#news  h1{
+#news h1, #schedule h1{
     color: #3b5f38;
 }
 
@@ -35,7 +35,7 @@ main {
     color: #3b5f38;
 }
 
-#daily-schedule .row {
+.row {
     color:#314606;
     font-weight: bolder;
     border: 4px dashed #524a26;

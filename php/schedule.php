@@ -1,5 +1,4 @@
 <?php
-$today_string = date("l");
 $conexion = mysqli_connect("localhost", "root", "", "nailed_it");
 
 if ($conexion->connect_error) {
@@ -30,30 +29,6 @@ function createRow($row) {
 EOT;
 }
 
-function fillNoticeBoard($conexion) {
-    // Query to obtain all the notices (only the closest 3);
-    $query = "SELECT * FROM notices ORDER BY write_date DESC LIMIT 3";
-    if ($result = mysqli_query($conexion, $query)) { 
-        while ($row = mysqli_fetch_assoc($result)) 
-            echo createNotice($row);
-    } else {
-        echo "Something has gone wrong! ".$sql->errorno;
-    }
-}
-
-function createNotice($row) {
-    //Create a single notice with Title, Date and Description
-    $notice_date = date("d F Y", strtotime($row['write_date']) );
-
-    return <<<EOT
-    <article class="post">
-        <h2>{$row['title']}</h2>
-        <h3>$notice_date</h3>
-        <p>{$row['notice_text']}</p>
-    </article>
-EOT;
-}
-
 ?>
 
 
@@ -68,7 +43,7 @@ EOT;
     <!--CSS Y FAVICON-->
     <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
     <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="../css/homepage.css">
+    <link rel="stylesheet" type="text/css" href="../css/schedule.css">
     <link id="theme" rel="stylesheet" type="text/css" href="../css/themes/winter.css">
 
     <!--JQUERY Y BXSLIDER-->
@@ -138,20 +113,38 @@ EOT;
         </div>
 
         <!-- SECTION NEWS -->
-        <section id="news">
-            <h1>NOTICEBOARD</h1>
-            <?php
-                echo fillNoticeBoard($conexion);
-            ?>
-        </section>
+        <section id="schedule">
+            <h1>FULL SCHEDULE</h1>
 
-        <!-- DAILY SCHEDULE ASIDE -->
-        <aside id="daily-schedule">
-            <h1>DAY SCHEDULE</h1>
-            <?php
-                echo dailySchedule($conexion, $today_string);
-            ?>
-        </aside>
+            <div id="swipe-left"></div>
+            <div id="swipe-right"></div>
+
+            <div class="day active">
+                <h2>Monday</h2>
+                <div class="subjects"> <?= dailySchedule($conexion, "Monday"); ?> </div>
+            </div>
+
+            <div class="day hidden">
+                <h2>Tuesday</h2>
+                <div class="subjects"> <?= dailySchedule($conexion, "Tuesday"); ?> </div>
+            </div>
+
+            <div class="day hidden">
+                <h2>Wednesday</h2>
+                <div class="subjects"> <?= dailySchedule($conexion, "Wednesday"); ?> </div>
+            </div>
+
+            <div class="day hidden">
+                <h2>Thursday</h2>
+                <div class="subjects"> <?= dailySchedule($conexion, "Thursday"); ?> </div>
+            </div>
+
+            <div class="day hidden">
+                <h2>Friday</h2>
+                <div class="subjects"> <?= dailySchedule($conexion, "Friday"); ?> </div>
+            </div>
+
+        </section>
     </main>
 
     <!-- FOOTER-->

@@ -78,10 +78,10 @@ main {
     grid-template-areas: "logo logo . ."
         "nav nav nav nav"
         "slider slider slider slider"
-        "news news news schedule";
-    gap: 20px 10px;
-    grid-template-columns: 1fr 1fr 1fr 30%;
-    grid-template-rows: 75px 50px 300px 700px;
+        "schedule schedule schedule schedule";
+    gap: 20px 0px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 75px 50px 300px auto;
 
     width: 85%;
     margin: 0px auto;
@@ -159,20 +159,47 @@ main {
 }
 
 
-/* NEWS - POSTS */
-#news {
-    grid-area: news;
+/* SCHEDULE */
+#schedule {
+    grid-area: schedule;
     border: 10px outset;
     padding: 5px;
-    overflow-y: scroll;
     display: flex;
     flex-direction: column;
     align-items: center;
     background: url("../assets/blog_bg.png");
     background-repeat: repeat;
+    margin: 0 auto;
+    width: 85%;
+    position: relative;
+    padding-bottom: 30px;
+    overflow: hidden;
 }
 
-#news h1 {
+#swipe-left, #swipe-right {
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    background-color: black;
+}
+
+#swipe-left:hover, #swipe-right:hover{
+    cursor: pointer;
+}
+
+#swipe-left {
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+}
+
+#swipe-right{
+    right: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+#schedule h1 {
     text-align: center;
     font-size: 2.5rem;
     letter-spacing: 2px;
@@ -180,41 +207,33 @@ main {
     margin-top: 10px;
 }
 
-#news article {
-    margin-bottom: 50px;
-    text-align: justify;
-    width: 90%;
+.day {
+    width: 80%;
+    text-align: center;
+    display: inline-block;
+    position: relative;
 }
 
-#news article:last-child {
-    margin-bottom: 0px;
-    padding-bottom: 50px;
-}
-
-#news article p {
-    text-indent: 15px;
-}
-
-/* SCHEDULE */
-#daily-schedule {
-    grid-area: schedule;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-#daily-schedule h1 {
-    font-size: 1.9rem;
-    letter-spacing: 1px;
-    margin-bottom: 30px;
+.day h1 {
     text-align: center;
 }
 
-#daily-schedule .row {
+.day.hidden {
+    display: none;
+}
+
+.subjects {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.row {
+    margin: 30px 10px 10px 10px;
     width: 230px;
     font-size: 1.4rem;
-    margin-bottom: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -244,11 +263,10 @@ footer {
         grid-template-areas: ". logo logo ."
             "nav nav nav nav"
             "slider slider slider slider"
-            "news news news news"
             "schedule schedule schedule schedule";
         gap: 20px 0px;
         grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-rows: 60px 40px 30vw 700px auto;
+        grid-template-rows: 60px 40px 30vw auto;
     }
 
     #logo {
@@ -268,12 +286,12 @@ footer {
         font-size: 16px;
     }
 
-    #news {
+    #schedule {
         width: 90%;
         margin: 0 auto;
     }
 
-    #news h1 {
+    #schedule h1 {
         font-size: 5vw;
     }
 }
@@ -284,11 +302,10 @@ footer {
         grid-template-areas: ". logo logo ."
             "nav nav nav nav"
             "slider slider slider slider"
-            "news news news news"
             "schedule schedule schedule schedule";
         gap: 20px 0px;
         grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-rows: 12vw 40px 100px 700px auto;
+        grid-template-rows: 12vw 40px 100px auto;
     }
 
     #logo {
@@ -311,29 +328,12 @@ footer {
         white-space: nowrap;
     }
 
-    #news {
+    #schedule {
         width: 100%;
     }
 
-    #news h1 {
+    #schedule h1 {
         font-size: 5vw;
-    }
-
-    #news article h2 {
-        font-size: 18px;
-    }
-
-    #news article h3 {
-        font-size: 14px;
-    }
-
-    #news article p {
-        font-size: 12px;
-    }
-
-    #daily-schedule .row {
-        width: 200px;
-        font-size: 1.2rem;
     }
 
     footer {
