@@ -7,19 +7,20 @@ main {
     background-repeat: repeat;
 }
 
-#logo{
+#logo {
     background-color: #f3872f;
 }
 
-#menu ul{
-    background-color: 	#FFD700;
+#menu ul {
+    background-color: #FFD700;
 }
 
-#menu ul li:hover { 
+#menu ul li:hover {
     background-color: #f3872f;
 }
 
-#news h1, #schedule h1{
+#news h1,
+#schedule h1 {
     color: #f3872f;
 }
 
@@ -35,11 +36,32 @@ main {
     color: #ff7809;
 }
 
+.day h2 {
+    color: #236e96;
+}
+
 .row {
     color: #0068a0;
     font-weight: bolder;
     border: 4px dashed #ff7809;
     background-color: #ffe23e;
+}
+
+.teacher-block {
+    color: #0068a0;
+    background: rgb(255, 120, 9);
+    background: linear-gradient(90deg, rgba(255, 120, 9, 0.49933476808692223) 0%, rgba(255, 120, 9, 1) 50%, rgba(255, 120, 9, 0.5021358885351015) 100%);
+}
+
+.teacher-block .photo img {
+    padding: 1px;
+    background-color: #0068a0;
+}
+
+@media (max-width: 426px) {
+    .row {
+        border: 3px dashed #ff7809;
+    }
 }
 
 footer {

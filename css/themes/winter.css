@@ -7,12 +7,12 @@ main {
     background-repeat: repeat;
 }
 
-#logo{
+#logo {
     background-color: #405173;
     color: white;
 }
 
-#menu ul{
+#menu ul {
     background-color: #8a9cbf;
 }
 
@@ -20,7 +20,7 @@ main {
     color: black;
 }
 
-#menu ul li:hover { 
+#menu ul li:hover {
     background-color: #405173;
 }
 
@@ -28,7 +28,8 @@ main {
     color: white;
 }
 
-#news  h1, #schedule h1{
+#news h1,
+#schedule h1 {
     color: #405173;
 }
 
@@ -40,6 +41,10 @@ main {
     color: #8c6c6c;
 }
 
+.day h2 {
+    color: #402924;
+}
+
 #daily-schedule h1 {
     color: #405173;
 }
@@ -49,6 +54,23 @@ main {
     font-weight: bolder;
     border: 4px dashed #402924;
     background-color: #8a9cbf;
+}
+
+.teacher-block {
+    color: #402924;
+    background: rgb(138, 156, 191);
+    background: linear-gradient(90deg, rgba(138, 156, 191, 0.5049370089832808) 0%, rgba(138, 156, 191, 1) 50%, rgba(138, 156, 191, 0.5049370089832808) 100%);
+}
+
+.teacher-block .photo img {
+    padding: 1px;
+    background-color: #402924;
+}
+
+@media (max-width: 426px) {
+    .row {
+        border: 3px dashed #402924;
+    }
 }
 
 footer {

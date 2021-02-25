@@ -7,19 +7,20 @@ main {
     background-repeat: repeat;
 }
 
-#logo{
+#logo {
     background-color: #5e8d5a;
 }
 
-#menu ul{
+#menu ul {
     background-color: #66b95f;
 }
 
-#menu ul li:hover { 
+#menu ul li:hover {
     background-color: #5e8d5a;
 }
 
-#news h1, #schedule h1{
+#news h1,
+#schedule h1 {
     color: #3b5f38;
 }
 
@@ -31,15 +32,36 @@ main {
     color: #5f5a44;
 }
 
+.day h2 {
+    color: #314606;
+}
+
 #daily-schedule h1 {
     color: #3b5f38;
 }
 
 .row {
-    color:#314606;
+    color: #314606;
     font-weight: bolder;
     border: 4px dashed #524a26;
     background-color: #CFCBBA;
+}
+
+.teacher-block {
+    color: #314606;
+    background: rgb(207, 203, 186);
+    background: linear-gradient(90deg, rgba(207, 203, 186, 0.6029762246695554) 0%, rgba(207, 203, 186, 1) 50%, rgba(207, 203, 186, 0.6001751042213761) 100%);
+}
+
+.teacher-block .photo img {
+    padding: 1px;
+    background-color: #314606;
+}
+
+@media (max-width: 426px) {
+    .row {
+        border: 3px dashed #524a26;
+    }
 }
 
 footer {

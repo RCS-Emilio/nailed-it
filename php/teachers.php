@@ -1,36 +1,4 @@
-<?php
-$conexion = mysqli_connect("localhost", "root", "", "nailed_it");
-
-if ($conexion->connect_error) {
-    die('Error de conexión: ' . $conexion->connect_error);
-}
-
-function dailySchedule($conexion, $today_string) {
-    // Query to check for the classes for this day
-    $query = "SELECT * FROM schedule WHERE day = '$today_string' ";
-    if ($result = mysqli_query($conexion, $query)) { 
-        while ($row = mysqli_fetch_assoc($result)) 
-            echo createRow($row);
-    } else {
-        echo "Something has gone wrong! ".$sql->errorno;
-    }
-}
-
-function createRow($row) {
-    //Creates the div with class info
-    $start_hour = date("G:i", strtotime($row['start_hour']) ) ;
-    $end_hour = date("G:i", strtotime($row['end_hour']) ) ;
-
-    return <<<EOT
-    <div class="row">
-            <span class="hour">$start_hour - $end_hour</span>
-            <span class="subject">{$row['subject']}</span>
-    </div>
-EOT;
-}
-
-?>
-
+<?php?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -43,7 +11,7 @@ EOT;
     <!--CSS Y FAVICON-->
     <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
     <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="../css/schedule.css">
+    <link rel="stylesheet" type="text/css" href="../css/teachers.css">
     <link id="theme" rel="stylesheet" type="text/css" href="../css/themes/winter.css">
 
     <!--JQUERY Y BXSLIDER-->
@@ -112,43 +80,57 @@ EOT;
             </div>
         </div>
 
-        <!-- SECTION NEWS -->
-        <section id="schedule">
-            <h1>FULL SCHEDULE</h1>
+        <!-- SECTION TEACHERS -->
+        <section id="teachers">
+            <div class="teacher-block">
+                <div class="photo">
+                    <img src="../assets/teach1.jpg" alt="Loussa Gomez">
+                    <h3>Loussa Gomez</h3>
+                </div>
 
-            <div id="swipe-left">
-                <img src="../assets/tap_l.png" alt="Next day">
-            </div>
-            <div id="swipe-right">
-                <img src="../assets/tap_r.png" alt="Previous day">
-            </div>
-
-            <div class="day active">
-                <h2>Monday</h2>
-                <div class="subjects"> <?= dailySchedule($conexion, "Monday"); ?> </div>
+                <div class="motivational">
+                    <h3>Mathematics and Physics Teacher</h3>
+                    <em>"Teachers who make physics boring are criminals. I'm innocent of course."</em>
+                </div>
             </div>
 
-            <div class="day hidden">
-                <h2>Tuesday</h2>
-                <div class="subjects"> <?= dailySchedule($conexion, "Tuesday"); ?> </div>
+            <div class="teacher-block">
+                <div class="photo">
+                    <img src="../assets/teach2.jpg" alt="Francisco Watts">
+                    <h3>Francisco Watts</h3>
+                </div>
+
+                <div class="motivational">
+                    <h3>French and English Teacher</h3>
+                    <em>"The best way to learn the languague is speaking all day long!"</em>
+                </div>
             </div>
 
-            <div class="day hidden">
-                <h2>Wednesday</h2>
-                <div class="subjects"> <?= dailySchedule($conexion, "Wednesday"); ?> </div>
+            <div class="teacher-block">
+                <div class="photo">
+                    <img src="../assets/teach3.jpg" alt="Angela Flores">
+                    <h3>Angela Flores</h3>
+                </div>
+
+                <div class="motivational">
+                    <h3>History and English Teacher</h3>
+                    <em>"The more you know about the past, the better prepared you are for the future."</em>
+                </div>
             </div>
 
-            <div class="day hidden">
-                <h2>Thursday</h2>
-                <div class="subjects"> <?= dailySchedule($conexion, "Thursday"); ?> </div>
-            </div>
+            <div class="teacher-block">
+                <div class="photo">
+                    <img src="../assets/teach4.jpg" alt="Wade Johnson">
+                    <h3>Wade Johnson</h3>
+                </div>
 
-            <div class="day hidden">
-                <h2>Friday</h2>
-                <div class="subjects"> <?= dailySchedule($conexion, "Friday"); ?> </div>
+                <div class="motivational">
+                    <h3>French and Physics Teacher</h3>
+                    <em>"I understand that my subjects are hard. But <strong>c'est la vie...</strong>."</em>
+                </div>
             </div>
-
         </section>
+
     </main>
 
     <!-- FOOTER-->

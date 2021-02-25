@@ -123,8 +123,8 @@ EOT;
             <ul>
                 <li><a href="./homepage.php">Home</a></li>
                 <li><a href="./schedule.php">Schedule</a></li>
-                <li><a href="#">Academy</a></li>
-                <li><a href="#">Teachers</a></li>
+                <li><a href="./academy.php">Academy</a></li>
+                <li><a href="./teachers.php">Teachers</a></li>
             </ul>
         </nav>
 

@@ -1,0 +1,64 @@
+@import "./global.css";
+
+/* LAYOUT */
+main {
+    display: grid;
+    grid-template-areas: "logo logo . ."
+        "nav nav nav nav"
+        "slider slider slider slider"
+        "academy academy academy academy";
+    gap: 20px 0px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 75px 50px 300px 700px;
+
+    width: 85%;
+    margin: 0px auto;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 5px 5px 5px black;
+}
+
+
+/* ACADEMY SECTION */
+#academy {
+    grid-area: academy;
+}
+
+#map {
+    width: 100%;
+    height: 50%;
+    padding: 1px;
+    background-color: black;
+}
+
+
+/* MEDIA QUERIES */
+@media (min-width: 426px) and (max-width: 1024px) {
+    main {
+        display: grid;
+        grid-template-areas: ". logo logo ."
+            "nav nav nav nav"
+            "slider slider slider slider"
+            "academy academy academy academy";
+        gap: 20px 0px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 60px 40px 30vw 700px;
+    }
+
+
+}
+
+@media (max-width: 426px) {
+    main {
+        display: grid;
+        grid-template-areas: ". logo logo ."
+            "nav nav nav nav"
+            "slider slider slider slider"
+            "academy academy academy academy";
+        gap: 20px 0px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 12vw 40px 100px 700px;
+    }
+
+}

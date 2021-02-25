@@ -1,0 +1,149 @@
+@import "./global.css";
+
+/* LAYOUT */
+main {
+    display: grid;
+    grid-template-areas: "logo logo . ."
+        "nav nav nav nav"
+        "slider slider slider slider"
+        "teachers teacher teachers teachers";
+    gap: 20px 0px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 75px 50px 300px auto;
+
+    width: 85%;
+    margin: 0px auto;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 5px 5px 5px black;
+}
+
+
+/* ACADEMY */
+#teachers {
+    grid-area: teachers;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.teacher-block {
+    width: 80%;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    border-radius: 10px;
+    justify-content: center;
+    padding: 5px 15px 5px 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.teacher-block:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.teacher-block .photo {
+    flex-direction: column;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.teacher-block .motivational{
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    padding: 5px 15px 5px 15px;
+}
+
+.teacher-block .motivational h3{
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+}
+
+.teacher-block .motivational em{
+    font-size: 1.3rem;
+}
+
+.teacher-block .photo img {
+    height: 80%;
+}
+
+
+/* MEDIA QUERIES TABLETS */
+@media (min-width: 426px) and (max-width: 1024px) {
+    main {
+        display: grid;
+        grid-template-areas: ". logo logo ."
+            "nav nav nav nav"
+            "slider slider slider slider"
+            "teachers teachers teachers teachers";
+        gap: 20px 0px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 60px 40px 30vw auto;
+    }
+
+}
+
+/* MEDIA QUERIES SMARTPHONES*/
+@media (max-width: 426px) {
+    main {
+        display: grid;
+        grid-template-areas: ". logo logo ."
+            "nav nav nav nav"
+            "slider slider slider slider"
+            "teachers teachers teachers teachers";
+        gap: 20px 0px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 60px 40px 30vw auto;
+    }
+
+    .teacher-block {
+        width: 100%;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        border-radius: 10px;
+        align-items: center;
+        margin-top: 20px;
+        padding: 15px 5px 15px 5px;
+        margin-bottom: 20px;
+    }
+
+    .teacher-block:nth-child(even) {
+        flex-direction: column;
+    }
+    
+    .teacher-block .photo {
+        flex-direction: column;
+        height: 50%;
+        width: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    
+    .teacher-block .motivational{
+        width: 100%;
+        height: 50%;
+        text-align: center;
+    }
+    
+    .teacher-block .motivational h3{
+        margin-bottom: 10px;
+        margin-top: 10px;
+        font-size: 1.1rem;
+    }
+    
+    .teacher-block .motivational em{
+        font-size: 1rem;
+    }
+    
+    .teacher-block .photo img {
+        height: 80%;
+    }
+}
