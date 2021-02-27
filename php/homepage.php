@@ -1,6 +1,7 @@
 <?php
 $today_string = date("l");
-$conexion = mysqli_connect("localhost", "root", "", "nailed_it");
+include_once('./db.php');
+$conexion = mysqli_connect("localhost", $dbuser, $dbpass, $dbname);
 
 if ($conexion->connect_error) {
     die('Error de conexión: ' . $conexion->connect_error);

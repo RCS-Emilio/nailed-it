@@ -34,7 +34,7 @@
 
     <!-- MAIN SCRIPT -->
     <script type="text/javascript" src="../js/script.js"></script>
-    <script type="text/javascript" src="../cdn/mapbox.js"></script>
+    <script type="text/javascript" src="../js/mapbox.js"></script>
 
 
     <title>Nailed it! Academy</title>
