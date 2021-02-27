@@ -7,10 +7,12 @@ main {
     background-repeat: repeat;
 }
 
+/* LOGO */
 #logo {
     background-color: #5e8d5a;
 }
 
+/* MENU */
 #menu ul {
     background-color: #66b95f;
 }
@@ -19,6 +21,7 @@ main {
     background-color: #5e8d5a;
 }
 
+/* HOMEPAGE TAB */
 #news h1,
 #schedule h1 {
     color: #3b5f38;
@@ -32,6 +35,7 @@ main {
     color: #5f5a44;
 }
 
+/* SCHEDULE TAB + DAILY-SCHEDULE ASIDE */
 .day h2 {
     color: #314606;
 }
@@ -47,6 +51,18 @@ main {
     background-color: #CFCBBA;
 }
 
+#swipe-left,
+#swipe-right {
+    background-color: #566e24;
+}
+
+@media (max-width: 426px) {
+    .row {
+        border: 3px dashed #524a26;
+    }
+}
+
+/* TEACHERS TAB */
 .teacher-block {
     color: #314606;
     background: rgb(207, 203, 186);
@@ -58,12 +74,37 @@ main {
     background-color: #314606;
 }
 
-@media (max-width: 426px) {
-    .row {
-        border: 3px dashed #524a26;
-    }
+/* ACADEMY TAB */
+.ui-accordion-header {
+    color: black !important;
 }
 
+.ui-accordion-header-active {
+    background-color: #5e8d5a !important;
+}
+
+.ui-accordion-header-collapsed {
+    background-color: #66b95f !important;
+}
+
+#academy-form {
+    background-color: #66b95f;
+}
+
+input,
+textarea,
+select,
+option {
+    background: white !important;
+    border-top: #314606 1px solid !important;
+    border-left: #314606 1px solid !important;
+    border-bottom: #314606 3px solid !important;
+    border-right: #314606 3px solid !important;
+    border-radius: 2px !important;
+    color: black !important;
+}
+
+/* FOOTER */
 footer {
     background-color: #5e8d5ac0;
 }

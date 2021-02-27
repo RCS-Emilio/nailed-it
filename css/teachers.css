@@ -6,7 +6,7 @@ main {
     grid-template-areas: "logo logo . ."
         "nav nav nav nav"
         "slider slider slider slider"
-        "teachers teacher teachers teachers";
+        "teachers teachers teachers teachers";
     gap: 20px 0px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 75px 50px 300px auto;
@@ -19,7 +19,6 @@ main {
     box-shadow: 5px 5px 5px black;
 }
 
-
 /* ACADEMY */
 #teachers {
     grid-area: teachers;
@@ -30,7 +29,7 @@ main {
 }
 
 .teacher-block {
-    width: 80%;
+    width: 90%;
     height: 200px;
     display: flex;
     flex-direction: row;
@@ -75,7 +74,7 @@ main {
 
 
 /* MEDIA QUERIES TABLETS */
-@media (min-width: 426px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {
     main {
         display: grid;
         grid-template-areas: ". logo logo ."
@@ -89,6 +88,31 @@ main {
 
 }
 
+@media (min-width: 426px) and (max-width: 768px) {
+    main {
+        display: grid;
+        grid-template-areas: ". logo logo ."
+            "nav nav nav nav"
+            "slider slider slider slider"
+            "teachers teachers teachers teachers";
+        gap: 20px 0px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 60px 40px 30vw auto;
+    }
+
+    .teacher-block .photo img {
+        height: 60%;
+    }
+
+    .teacher-block .motivational h3 {
+       font-size: 3.1vw;
+    }
+
+    .teacher-block .motivational em {
+        font-size: 2.9vw;
+    }
+}
+
 /* MEDIA QUERIES SMARTPHONES*/
 @media (max-width: 426px) {
     main {
@@ -99,7 +123,7 @@ main {
             "teachers teachers teachers teachers";
         gap: 20px 0px;
         grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-rows: 60px 40px 30vw auto;
+        grid-template-rows: 12vw 40px 30vw auto;
     }
 
     .teacher-block {

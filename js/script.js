@@ -1,20 +1,61 @@
 $(document).ready(function () {
     // THEME SELECTOR
     var theme = $("#theme");
+    var theme_storage = localStorage.getItem("theme");
+    var theme_string = "";
+
+    if (theme_storage === null) {
+        let current_theme = getSeasonTheme();
+        theme.attr("href", current_theme);
+    } else {
+        theme.attr("href", theme_storage);
+    }   
+
+    function getSeasonTheme() {
+        var date = new Date();
+        var month = date.getMonth();
+        switch (month) {
+            case '12':
+            case '1':
+            case '2':
+                return "../css/themes/winter.css"
+                break;
+            case '3':
+            case '4':
+            case '5':
+                return  '../css/themes/spring.css';
+                break;
+            case '6':
+            case '7':
+            case '8':
+                return  '../css/themes/summer.css';
+                break;
+            case '9':
+            case '10':
+            case '11':
+                return '../css/themes/autumn.css';
+                break;
+        }
+    }
+
     $("#spring").click(function () {
         theme.attr("href", "../css/themes/spring.css");
+        localStorage.setItem('theme', '../css/themes/spring.css');
     });
 
     $("#summer").click(function () {
         theme.attr("href", "../css/themes/summer.css");
+        localStorage.setItem('theme', '../css/themes/summer.css');
     });
 
     $("#autumn").click(function () {
         theme.attr("href", "../css/themes/autumn.css");
+        localStorage.setItem('theme', '../css/themes/autumn.css');
     });
 
     $("#winter").click(function () {
         theme.attr("href", "../css/themes/winter.css");
+        localStorage.setItem('theme', '../css/themes/winter.css');
     });
 
     // TOGGLER THEME SELECTOR
@@ -46,7 +87,7 @@ $(document).ready(function () {
         pause: 2000
     });
 
-    // Only available on that site
+    // Only available on the SCHEDULE tab
     if (window.location.pathname == '/nailed-it/php/schedule.php') {
         //SCHEDULE SWIPER (RIGTH)
         $("#swipe-right").click(function (e) {
@@ -172,20 +213,36 @@ $(document).ready(function () {
         });
     }
 
-    // Only available on that site
+    // Only available on the ACADEMY tab
     if (window.location.pathname == '/nailed-it/php/academy.php') {
-        mapboxgl.accessToken = 'pk.eyJ1Ijoiam9zZXBlMDQxMSIsImEiOiJja2xreXZoN3cwam80MndwMnR4aW93M2N3In0.uBhapBnjS8pRyptBrq0M0w';
+        // Accordion functionality
+        $(function () {
+            $("#accordion").accordion({
+                active: 3,
+                heightStyle: "content",
+                collapsible: true
+            });
+        });
+
+        // Map functionality
+        mapboxgl.accessToken = api_code.code;
         var map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mapbox/streets-v11',
             center: [12.550343, 55.665957],
             zoom: 18
         });
-
         var marker = new mapboxgl.Marker()
             .setLngLat([12.550343, 55.665957])
             .addTo(map);
+
+        // Form functionality
+        var academy_form = $("#academy-form");
+        academy_form.submit(function (e) {
+            e.preventDefault();
+            academy_form.trigger('reset');
+            window.alert("Your message was submited.");
+        });
+
     }
-
-
 });

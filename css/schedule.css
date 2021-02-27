@@ -40,7 +40,6 @@ main {
     height: 44px;
     width: 44px;
     position: absolute;
-    background-color: #8a9cbf;
 }
 
 #swipe-left img, #swipe-right img {
@@ -153,6 +152,11 @@ main {
         width: 100%;
     }
 
+    #swipe-left, #swipe-right {
+        height: 33px;
+        width: 33px;
+    }
+
     #schedule h1 {
         font-size: 5vw;
     }
@@ -162,7 +166,7 @@ main {
     }
 
     .row {
-        width: 150px;
+        width: 38vw;
         font-size: 1.1rem;
         margin: 15px 10px 10px 10px;
     }

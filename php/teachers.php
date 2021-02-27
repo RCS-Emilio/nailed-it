@@ -12,17 +12,17 @@
     <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
     <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="../css/teachers.css">
-    <link id="theme" rel="stylesheet" type="text/css" href="../css/themes/winter.css">
+    <link id="theme" rel="stylesheet" type="text/css" href="">
 
-    <!--JQUERY Y BXSLIDER-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <!--JQUERY -->
+    <script src="../cdn/jquery-3.5.1.min.js"></script>
+
+    <!--BXSLIDER-->
+    <link rel="stylesheet" href="../cdn/bxslider-4-4.2.12/dist/jquery.bxslider.css">
+    <script src="../cdn/bxslider-4-4.2.12/dist/jquery.bxslider.min.js"></script>
 
     <!--FONT AWSOME-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
-        crossorigin="anonymous" />
+    <link rel="stylesheet" href="../cdn/fontawesome-free-5.15.2-web/css/all.min.css">
 
     <!--MAIN SCRIPT-->
     <script type="text/javascript" src="../js/script.js"></script>
@@ -66,17 +66,17 @@
             <ul>
                 <li><a href="./homepage.php">Home</a></li>
                 <li><a href="./schedule.php">Schedule</a></li>
-                <li><a href="./academy.php">Academy</a></li>
                 <li><a href="./teachers.php">Teachers</a></li>
+                <li><a href="./academy.php">Academy</a></li>
             </ul>
         </nav>
 
         <!-- SLIDER-->
         <div id="slider">
             <div class="bxslider">
-                <div><img src="../assets/student.jpg" title="Image 1"></div>
-                <div><img src="../assets/youngs.png" title="Image 2"></div>
-                <div><img src="../assets/teachers.jpg" title="Image 3"></div>
+                <div><img src="../assets/student.jpg" title="Student"></div>
+                <div><img src="../assets/youngs.png" title="Youngs"></div>
+                <div><img src="../assets/teachers.jpg" title="Teachers"></div>
             </div>
         </div>
 
