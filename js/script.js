@@ -2,10 +2,9 @@ $(document).ready(function () {
     // THEME SELECTOR
     var theme = $("#theme");
     var theme_storage = localStorage.getItem("theme");
-    var theme_string = "";
 
     if (theme_storage === null) {
-        let current_theme = getSeasonTheme();
+        var current_theme = getSeasonTheme();
         theme.attr("href", current_theme);
     } else {
         theme.attr("href", theme_storage);
@@ -14,27 +13,14 @@ $(document).ready(function () {
     function getSeasonTheme() {
         var date = new Date();
         var month = date.getMonth();
-        switch (month) {
-            case '12':
-            case '1':
-            case '2':
-                return "../css/themes/winter.css"
-                break;
-            case '3':
-            case '4':
-            case '5':
-                return  '../css/themes/spring.css';
-                break;
-            case '6':
-            case '7':
-            case '8':
-                return  '../css/themes/summer.css';
-                break;
-            case '9':
-            case '10':
-            case '11':
-                return '../css/themes/autumn.css';
-                break;
+        if (3 <= month <= 5) {
+            return '../css/themes/spring.css';
+        } else if (6 <= month <= 8) {
+            return '../css/themes/summer.css';
+        } else if (9 <= month <= 11){
+            return '../css/themes/autumn.css';
+        } else {
+            return '../css/themes/winter.css';
         }
     }
 
